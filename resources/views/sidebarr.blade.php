@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Sidebar #8</title>
+  </head>
+
+  <style>
+    body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #fcfcfc; }
+
+p {
+  color: #b3b3b3;
+  font-weight: 300; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; }
+  a, a:hover {
+    text-decoration: none !important; }
+
+h2 {
+  font-size: 20px; }
+
+body {
+  position: relative; }
+  body:before {
+    position: absolute;
+    content: "";
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out; }
+  body.show-sidebar:before {
+    opacity: 1;
+    visibility: visible; }
+
+.site-section {
+  padding: 7rem 0; }
+
+aside, main {
+  height: 100vh;
+  min-height: 580px; }
+
+aside {
+  width: 300px;
+  left: 0;
+  z-index: 1001;
+  position: fixed;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  background-color: #fff;
+  -webkit-transition: 1s -webkit-transform cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 1s -webkit-transform cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1), 1s -webkit-transform cubic-bezier(0.23, 1, 0.32, 1); }
+  .show-sidebar aside {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); }
+  aside .toggle {
+    padding-left: 30px;
+    padding-top: 30px;
+    position: absolute;
+    right: 0;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%); }
+    .show-sidebar aside .toggle .burger:before, .show-sidebar aside .toggle .burger span, .show-sidebar aside .toggle .burger:after {
+      background: #000; }
+  .show-sidebar aside {
+    -webkit-box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.1); }
+  aside .side-inner {
+    padding: 30px 0;
+    height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; }
+    aside .side-inner .profile {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #efefef; }
+      aside .side-inner .profile img {
+        width: 80px;
+        margin: 0 auto 20px auto;
+        border-radius: 50%; }
+      aside .side-inner .profile .name {
+        font-size: 18px;
+        margin-bottom: 0; }
+      aside .side-inner .profile .country {
+        font-size: 14px;
+        color: #cfcfcf; }
+    aside .side-inner .counter {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #efefef;
+      text-align: center; }
+      aside .side-inner .counter div .number {
+        display: block;
+        font-size: 20px;
+        color: #000; }
+      aside .side-inner .counter div .number-label {
+        color: #cfcfcf; }
+    aside .side-inner .nav-menu ul, aside .side-inner .nav-menu ul li {
+      padding: 0;
+      margin: 0px;
+      list-style: none; }
+    aside .side-inner .nav-menu ul li a {
+      display: block;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #8b8b8b;
+      position: relative;
+      -webkit-transition: .3s padding-left ease;
+      -o-transition: .3s padding-left ease;
+      transition: .3s padding-left ease; }
+      aside .side-inner .nav-menu ul li a:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0px;
+        background-color: #ff7315;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: .3s opacity ease, .3s visibility ease, .3s width ease;
+        -o-transition: .3s opacity ease, .3s visibility ease, .3s width ease;
+        transition: .3s opacity ease, .3s visibility ease, .3s width ease; }
+      aside .side-inner .nav-menu ul li a:active, aside .side-inner .nav-menu ul li a:focus, aside .side-inner .nav-menu ul li a:hover {
+        outline: none; }
+      aside .side-inner .nav-menu ul li a:hover {
+        background: #fcfcfc;
+        color: #000; }
+        aside .side-inner .nav-menu ul li a:hover:before {
+          width: 4px;
+          opacity: 1;
+          visibility: visible; }
+    aside .side-inner .nav-menu ul li.active a {
+      background: #fcfcfc;
+      color: #000; }
+      aside .side-inner .nav-menu ul li.active a:before {
+        opacity: 1;
+        visibility: visible;
+        width: 4px; }
+    aside .side-inner .nav-menu ul li .collapsible {
+      position: relative; }
+      aside .side-inner .nav-menu ul li .collapsible:after {
+        content: "\e315";
+        font-size: 18px;
+        font-family: 'icomoon';
+        position: absolute;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        -webkit-transition: .3s transform ease;
+        -o-transition: .3s transform ease;
+        transition: .3s transform ease; }
+      aside .side-inner .nav-menu ul li .collapsible[aria-expanded="true"] {
+        background: #fcfcfc;
+        color: #000; }
+        aside .side-inner .nav-menu ul li .collapsible[aria-expanded="true"]:before {
+          opacity: 1;
+          visibility: visible;
+          width: 4px; }
+        aside .side-inner .nav-menu ul li .collapsible[aria-expanded="true"]:after {
+          -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg); }
+
+main {
+  width: calc(100%);
+  -webkit-transition: 1s -webkit-transform cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 1s -webkit-transform cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 1s transform cubic-bezier(0.23, 1, 0.32, 1), 1s -webkit-transform cubic-bezier(0.23, 1, 0.32, 1); }
+  .show-sidebar main {
+    -webkit-transform: translateX(300px);
+    -ms-transform: translateX(300px);
+    transform: translateX(300px); }
+  main .post-entry {
+    margin-bottom: 30px; }
+    main .post-entry .custom-thumbnail {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 80px;
+      flex: 0 0 80px;
+      margin-right: 30px; }
+  main .post-content h3 {
+    font-size: 18px; }
+  main .post-content .post-meta {
+    font-size: 15px;
+    color: #ccc; }
+
+/* Burger */
+.burger {
+  width: 28px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+  float: right; }
+
+.burger:before, .burger span, .burger:after {
+  width: 100%;
+  height: 2px;
+  display: block;
+  background: #000;
+  border-radius: 2px;
+  position: absolute;
+  opacity: 1; }
+
+.burger:before, .burger:after {
+  -webkit-transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
+  content: ""; }
+
+.burger:before {
+  top: 4px; }
+
+.burger span {
+  top: 15px; }
+
+.burger:after {
+  top: 26px; }
+
+/* Hover */
+.burger:hover:before {
+  top: 7px; }
+
+.burger:hover:after {
+  top: 23px; }
+
+/* Click */
+.burger.active span {
+  opacity: 0; }
+
+.burger.active:before, .burger.active:after {
+  top: 40%; }
+
+.burger.active:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=5);
+  /*for IE*/ }
+
+.burger.active:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-5);
+  /*for IE*/ }
+
+.burger:focus {
+  outline: none; }
+
+  </style>
+  <body>
+  
+    
+    <aside class="sidebar">
+      <div class="toggle">
+        <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+              <span></span>
+            </a>
+      </div>
+      <div class="side-inner">
+
+        <div class="profile">
+          <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+          <h3 class="name">Craig David</h3>
+          <span class="country">Web Designer</span>
+        </div>
+
+        
+        <div class="nav-menu">
+          <ul>
+            <li class="accordion">
+              <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsible">
+                <span class="icon-home mr-3"></span>Feed
+              </a>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                <div>
+                  <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Sport</a></li>
+                    <li><a href="#">Health</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="accordion">
+              <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsible">
+                <span class="icon-search2 mr-3"></span>Explore
+              </a>
+
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne">
+                <div>
+                  <ul>
+                    <li><a href="#">Interior</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Travel</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </li>
+            <li><a href="#"><span class="icon-notifications mr-3"></span>Notifications</a></li>
+            <li><a href="#"><span class="icon-location-arrow mr-3"></span>Direct</a></li>
+            <li><a href="#"><span class="icon-pie-chart mr-3"></span>Stats</a></li>
+            <li><a href="#"><span class="icon-sign-out mr-3"></span>Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+      
+    </aside>
+    <main>
+      <div class="site-section">
+        <div class="container">
+          <div class="row justify-content-center">
+
+
+
+
+
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>  
+    </main>
+    
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
