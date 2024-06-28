@@ -11,9 +11,8 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
 use App\Http\Controllers\MessageController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'loginform'])->name('login');
+Route::post('/', [AuthController::class, 'login'])->name('login.submit');
 
 
 
@@ -63,8 +62,7 @@ Route::post('/form/submitderangement', [FormController::class, 'submitderangemen
 
 
 
-Route::get('/login', [AuthController::class, 'loginform'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+
 
 
 Route::get('/dot',[UserController::class,'index'])->name('dot.index');
