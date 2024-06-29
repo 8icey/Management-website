@@ -1,0 +1,24 @@
+{
+  "name": "Algerie telecom viewer",
+  "short_name": "LPT",
+  "start_url": "/",
+  "background_color": "#6777ef",
+  "description": "algerie telecom gestion app",
+  "display": "fullscreen",
+  "theme_color": "#6777ef",
+  "icons": [
+      {
+          "src": "telecom.PNG",
+          "sizes": "400x400",
+          "type": "image/png"
+      }
+  ],
+  "screenshots": [
+      {
+          "src": "images/screenshot1.png",
+          "sizes": "1280x720",
+          "type": "image/png",
+          "form_factor": "wide"
+      }
+  ]
+}
