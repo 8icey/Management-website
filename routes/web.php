@@ -9,20 +9,12 @@ use App\Http\Controllers\DerangementController;
 use App\Http\Controllers\StatController;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 use App\Http\Controllers\MessageController;
-
+use Illuminate\Http\Response;
 
 Route::get('/', [AuthController::class, 'loginform'])->name('login');
 Route::post('/', [AuthController::class, 'login'])->name('login.submit');
 
 
-
-Route::get('/entreprise',[entreprisecontroller::class,'index'])->name('entreprise.index');
-Route::get('/entreprise/create',[entreprisecontroller::class,'create'])->name('entreprise.create');
-Route::post('/entreprise/store',[entreprisecontroller::class,'store'])->name('entreprise.store');
-Route::get('/entreprise/{entreprise}/edit',[entreprisecontroller::class,'edit'])->name('entreprise.edit');
-Route::put('/entreprise/{entreprise}/update',[entreprisecontroller::class,'update'])->name('entreprise.update');
-Route::delete('/entreprise/{entreprise}/destroy',[entreprisecontroller::class,'destroy'])->name('entreprise.destroy');
-Route::get('/entreprise/dashboard', [entreprisecontroller::class, 'dashboard'])->name('entreprise.dashboard');
 
 // Route::get('/homepage', [DemandeController::class, 'homepage'])->name('homepage');
 // Route::get('/homepage', function () {
@@ -108,9 +100,14 @@ Route::get('/settingsfr',[UserController::class,'settingsfr'])->name('settingsfr
 Route::get('/messages/send', [MessageController::class, 'sendMessageForm'])->name('msg.send');
 Route::post('/messages/send', [MessageController::class, 'sendMessage'])->name('msg.send');
 Route::get('/messages', [MessageController::class, 'getMessages'])->name('msg.index');
-
-
 Route::get('/messages/sendfr', [MessageController::class, 'sendMessageFormfr'])->name('msg.sendfr');
 Route::post('/messages/sendfr', [MessageController::class, 'sendMessagefr'])->name('msg.sendfr');
 Route::get('/messagesfr', [MessageController::class, 'getMessagesfr'])->name('msg.indexfr');
 Route::get('/emails', [MessageController::class, 'getEmails'])->name('emails');
+
+Route::get('/messages/filter', [MessageController::class, 'filterByDate'])->name('msg.filter');
+Route::get('/messagesfr/filter', [MessageController::class, 'filterByDatefr'])->name('msg.filterfr');
+
+Route::fallback(function () {
+    return new Response(view('error404'));
+});

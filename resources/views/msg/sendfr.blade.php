@@ -100,6 +100,10 @@
     --text-color: #717171;
     --chart-bg-color: #1e1e1e;
 }
+.error-message {
+    var(--text-color);
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -108,8 +112,22 @@
         <h1>Envoyer un Message</h1>
 
         @if(session('success'))
-            <div>{{ session('success') }}</div>
-        @endif
+        <div>{{ session('success') }}</div>
+    @endif
+
+    @if(session('error'))
+        <div class="error-message">{{ session('error') }}</div>
+    @endif
+
+    @if($errors->any())
+        <div class="error-message">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
         <form action="{{ route('msg.sendfr') }}" method="POST">
             @csrf

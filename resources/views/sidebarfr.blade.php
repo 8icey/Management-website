@@ -349,8 +349,8 @@ margin-top: 0.5cm;
         
         <ul class="sub-menu">
           {{-- <li><a class="link_name" href="#">Demande</a></li> --}}
-            <li><a href="{{ route('msg.indexfr') }}">reçu</a></li>
-          <li><a href="{{ route('msg.sendfr') }}">Envoyer</a></li>
+            <li><a href="{{ route('msg.indexfr') }}">Reçu / Envoyée</a></li>
+          <li><a href="{{ route('msg.sendfr') }}">Envoyer un msg</a></li>
           
         </ul>
       </li>

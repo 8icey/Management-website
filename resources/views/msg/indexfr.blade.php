@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="IMAGES/favicon.png">
     <title>Messages</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/Eggplant/jquery-ui.css">
 </head>
 <style>
     body {
@@ -76,13 +77,58 @@
     #messageTable tbody tr:hover {
         background-color: #f1f1f1; /* Highlight row on hover */
     }
+    .btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #2c0438; /* Button color */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Add some margin for spacing */
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #5a1a6d; /* Change color on hover */
+    text-decoration: none;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #2c0438; /* Button color */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Add some margin for spacing */
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #5a1a6d; /* Change color on hover */
+    text-decoration: none;
+}
 </style>
 <body>
     @include('sidebarfr') <!-- Assuming 'sidebarfr' includes French translations or content -->
 
     <div class="content"> 
         <h1>Messages</h1>
-
+        <form action="{{ route('msg.filterfr') }}" method="GET">
+            <label for="start_date" id="start_date_label">Start Date:</label>
+            <input type="text" id="start_date" name="start_date" value="{{ request('start_date') }}" autocomplete="off">
+            <label for="end_date" id="end_date_label">End Date:</label>
+            <input type="text" id="end_date" name="end_date" value="{{ request('end_date') }}" autocomplete="off">
+            <button type="submit" class="btn" id="filter_button">Filter</button>
+            <a href="{{ route('msg.index') }}" class="btn" id="reset_button">Reset</a>
+        </form>
         <table id="messageTable">
             <thead>
                 <tr>
@@ -110,13 +156,13 @@
     @include('footer') <!-- Assuming 'footer' includes necessary footer content -->
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- DataTables -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
-         $(document).ready(function() {
-            $('#messageTable').DataTable({
+        $(document).ready(function() {
+            $('#derangementsTable').DataTable({
                 "language": {
                     "lengthMenu": "Affichage de _MENU_ entrées",
                     "search": "Search:",
@@ -125,10 +171,22 @@
                         "next": "Suivante"
                     },
                     "info": "Affichage de _START_ à _END_ sur _TOTAL_  "
-                }
+                },
             });
         });
       
+        $(document).ready(function() {
+            $('#messageTable').DataTable();
+            
+            $("#start_date").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+            $("#end_date").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+
+           
+        });
 
 
             // Dark Mode toggle
