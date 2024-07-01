@@ -78,7 +78,7 @@ class DerangementController extends Controller
 
         $request->validate([
             
-            'Status_Derangement' => 'required|max:50',
+            'Status_Derangement' => 'required|alpha|max:10',
             
         ]);
 
@@ -182,7 +182,7 @@ public function editfr(Derangement $derangement, Request $request)
 public function updatefr(Request $request, Derangement $derangement)
 {
     $request->validate([
-        'Status_Derangement' => 'required|max:50',
+        'Status_Derangement' => 'required|alpha|max:10',
     ]);
 
     \DB::table('derangements')

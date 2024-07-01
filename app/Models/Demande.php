@@ -23,11 +23,11 @@ class Demande extends Model
     }
     
 
-    // public function client()
-    // {
-    //     return $this->belongsTo(Client::class);
     
-    // }
+    
+    
+    
+    
     public function client()
     {
         return $this->belongsTo(Client::class, 'IDclient', 'ID_Client');

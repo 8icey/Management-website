@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/IMAGES/favicon.png">
     <title>Page Not Found</title>
+    <style>
+        body{
+
+            align-content: center;
+            max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+           
+        }
+        </style>
 </head>
 <body>
     <h1>404 - Page Not Found</h1>

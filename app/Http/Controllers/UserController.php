@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         $user = session('user');
 
-        // Check if the user is logged in and has admin role
+       
         if (!$user || $user->Role !== 'admin') {
             return view('errordot');
         }
@@ -27,7 +27,6 @@ class UserController extends Controller
     {
         $user = session('user');
 
-        // Check if the user is logged in and has admin role
         if (!$user || $user->Role !== 'admin') {
             return view('errordot');
         }
@@ -39,7 +38,7 @@ class UserController extends Controller
     {
         $user = session('user');
 
-        // Check if the user is logged in and has admin role
+        
         if (!$user || $user->Role !== 'admin') {
             return view('errordot');
         }
@@ -75,7 +74,7 @@ class UserController extends Controller
     {
         $user = session('user');
 
-        // Check if the user is logged in and has admin role
+        
         if (!$user || $user->Role !== 'admin') {
             return view('errordot');
         }
@@ -87,7 +86,7 @@ class UserController extends Controller
     {
         $user = session('user');
 
-        // Check if the user is logged in and has admin role
+        
         if (!$user || $user->Role !== 'admin') {
             return view('errordot');
         }
@@ -95,8 +94,8 @@ class UserController extends Controller
         $request->validate([
            
             // 'Password' => 'required|max:50',
-            'Nom_user' => 'required|max:50',
-            'Prenom_user' => 'required|max:50',
+            'Nom_user' => 'required|alpha|max:10',
+        'Prenom_user' => 'required|alpha|max:10',
             'Wilaya_user' => 'required|max:50',
         ]);
 
@@ -116,7 +115,7 @@ class UserController extends Controller
     {
         $user = session('user');
 
-        // Check if the user is logged in and has admin role
+        
         if (!$user || $user->Role !== 'admin') {
             return view('errordot');
         }
@@ -183,7 +182,7 @@ class UserController extends Controller
 {
     $user = session('user');
 
-    // Check if the user is logged in and has admin role
+    
     if (!$user || $user->Role !== 'admin') {
         return view('errordot');
     }
@@ -196,7 +195,7 @@ public function createfr(Request $request)
 {
     $user = session('user');
 
-    // Check if the user is logged in and has admin role
+   
     if (!$user || $user->Role !== 'admin') {
         return view('errordot');
     }
@@ -208,7 +207,7 @@ public function storefr(Request $request)
 {
     $user = session('user');
 
-    // Check if the user is logged in and has admin role
+    
     if (!$user || $user->Role !== 'admin') {
         return view('errordot');
     }
@@ -244,7 +243,7 @@ public function editfr(User $dot, Request $request)
 {
     $user = session('user');
 
-    // Check if the user is logged in and has admin role
+   
     if (!$user || $user->Role !== 'admin') {
         return view('errordot');
     }
@@ -256,16 +255,16 @@ public function updatefr(Request $request, User $dot)
 {
     $user = session('user');
 
-    // Check if the user is logged in and has admin role
+    
     if (!$user || $user->Role !== 'admin') {
         return view('errordot');
     }
 
     $request->validate([
        
-        'Password' => 'required|max:50',
-        'Nom_user' => 'required|max:50',
-        'Prenom_user' => 'required|max:50',
+        // 'Password' => 'required|max:50',
+        'Nom_user' => 'required|alpha|max:10',
+        'Prenom_user' => 'required|alpha|max:10',
         'Wilaya_user' => 'required|max:50',
     ]);
 
@@ -285,7 +284,7 @@ public function destroyfr(User $dot)
 {
     $user = session('user');
 
-    // Check if the user is logged in and has admin role
+    
     if (!$user || $user->Role !== 'admin') {
         return view('errordot');
     }

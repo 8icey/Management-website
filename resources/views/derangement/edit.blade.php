@@ -209,7 +209,7 @@
             @method('PUT')
             <div>
                 <label for="Status_Derangement" id="status_label">Status derangement</label>
-                <input type="text" name="Status_Derangement" value="{{ $derangement->Status_Derangement }}" required>
+                <input type="text" name="Status_Derangement" value="{{ $derangement->Status_Derangement }}" maxlength="10" pattern="[A-Za-z]+" required>
             </div>
             <div>
                 <button type="button" id="btnupdate" onclick="showModal()">Update derangement</button>

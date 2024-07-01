@@ -17,13 +17,13 @@
 <link rel="icon" type="image/png" href="IMAGES/favicon.png">
 
 <style>
-    /* config.css */
+   
 
 :root {
   --baseColor: #606468;
 }
 
-/* helpers/align.css */
+
 
 .align {
   display: grid;
@@ -41,7 +41,7 @@
   max-width: 20rem;
 }
 
-/* helpers/hidden.css */
+
 
 .hidden {
   border: 0;
@@ -54,7 +54,7 @@
   width: 1px;
 }
 
-/* helpers/icon.css */
+
 
 :root {
   --iconFill: var(--baseColor);
@@ -73,13 +73,12 @@
   vertical-align: middle;
 }
 
-/* layout/base.css */
+
 
 :root {
   --htmlFontSize: 100%;
 
-  /* --bodyBackgroundColor: #40515d; */
-  /* --background-image: https://www.algerietelecom.dz/docs/media/1/original/Agence-110.jpg; */
+ 
   --bodyColor: var(--baseColor);
   --bodyFontFamily: "Open Sans";
   --bodyFontFamilyFallback: sans-serif;
@@ -101,8 +100,7 @@ html {
 }
 
 body {
-  /* background-color: #2c3338; */
-  /* background-color: var(--bodyBackgroundColor); */
+ 
   color: #606468;
   color: var(--bodyColor);
   font-family: "Open Sans", sans-serif;
@@ -117,12 +115,12 @@ body {
   min-height: 100vh;
   /* background-image: url('https://www.algerietelecom.dz/docs/media/1/original/Agence-110.jpg');  */
   background-image: url('IMAGES/algback.png'); 
-  background-size: cover; /* Ensures the image covers the whole background */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
-/* modules/anchor.css */
+
 
 :root {
   --anchorColor: #eee;
@@ -140,7 +138,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* modules/form.css */
+
 
 :root {
   --formGap: 0.875rem;
@@ -189,7 +187,7 @@ input[type="submit"] {
           flex: 1;
 }
 
-/* modules/login.css */
+
 
 :root {
   --loginBorderRadus: 0.25rem;
@@ -259,7 +257,7 @@ input[type="submit"] {
   background-color: var(--loginSubmitHoverBackgroundColor);
 }
 
-/* modules/text.css */
+
 
 p {
   margin-top: 1.5rem;
@@ -283,8 +281,8 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
-  z-index: -1; /* Place the overlay behind the body content */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: -1; 
 }
 
 
@@ -345,8 +343,7 @@ body::before {
     </svg>
     <script>
       if ("serviceWorker" in navigator) {
-         // Register a service worker hosted at the root of the
-         // site using the default scope.
+        
          navigator.serviceWorker.register("/sw.js").then(
          (registration) => {
             console.log("Service worker registration succeeded:", registration);

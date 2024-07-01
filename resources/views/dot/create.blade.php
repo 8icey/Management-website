@@ -135,11 +135,11 @@
             </div>
             <div>
                 <label for="Nom_user">First Name</label>
-                <input type="text" name="Nom_user" value="{{ old('Nom_user') }}" required>
+                <input type="text" name="Nom_user" value="{{ old('Nom_user') }}" maxlength="10" pattern="[A-Za-z]+" required>
             </div>
             <div>
                 <label for="Prenom_user">Last Name</label>
-                <input type="text" name="Prenom_user" value="{{ old('Prenom_user') }}" required>
+                <input type="text" name="Prenom_user" value="{{ old('Prenom_user') }}" maxlength="10" pattern="[A-Za-z]+" required>
             </div>
             <div>
                 <label for="Wilaya_user">Wilaya</label>

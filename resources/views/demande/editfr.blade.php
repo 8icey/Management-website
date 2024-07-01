@@ -206,7 +206,7 @@
             @method('PUT')
             <div>
                 <label for="Status_demande" id="status_label">Statur demande</label>
-                <input type="text" name="Status_demande" value="{{$demande->Status_demande}}" required>
+                <input type="text" name="Status_demande" value="{{$demande->Status_demande}}" maxlength="10" pattern="[A-Za-z]+" required>
             </div>
             <div>
                 <button type="button" onclick="showModal()" id="btnupdate" >Mettre a jour</button>

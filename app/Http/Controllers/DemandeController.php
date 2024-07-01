@@ -193,7 +193,7 @@ public function update(Request $request, Demande $demande )
 
     $request->validate([
         
-        'Status_demande' => 'required|max:50',
+        'Status_demande' => 'required|alpha|max:10',
         
     ]);
 
@@ -203,10 +203,7 @@ public function update(Request $request, Demande $demande )
         ->update(['Status_demande' => $request->Status_demande]);
    
         
-// $derangement->Status_Derangement = $request->input('Status_Derangement');
-        // $request->Status_Derangement = $derangement->Status_Derangement;
-        // dd($derangement->Status_Derangement);
-        // $derangement->save();
+
        
         switch ($demande->Type_demande) {
             case 'Idoom Fibre offer':
@@ -394,7 +391,7 @@ public function editfr(Demande $demande, Request $request)
 public function updatefr(Request $request, Demande $demande)
 {
     $request->validate([
-        'Status_demande' => 'required|max:50',
+        'Status_demande' => 'required|alpha|max:10',
     ]);
 
     \DB::table('demandes')

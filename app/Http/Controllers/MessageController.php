@@ -14,19 +14,19 @@ class MessageController extends Controller
     {
         $user = session('user');
         if (!$user) {
-            return redirect()->route('login'); // or wherever you want to redirect
+            return redirect()->route('login'); 
         }
         return view('msg.send');
     }
     public function sendMessage(Request $request)
     {
-        // Retrieve user from session
+        
         $user = session('user');
         if (!$user) {
-            return redirect()->route('login'); // or wherever you want to redirect
+            return redirect()->route('login');
         }
 
-        // Validate request
+       
        
        
         $request->validate([
@@ -56,20 +56,20 @@ class MessageController extends Controller
    
     public function getMessages()
     {
-        // Retrieve user from session
+        
         $user = session('user');
         if (!$user) {
-            return redirect()->route('login'); // or wherever you want to redirect
+            return redirect()->route('login'); 
         }
 
-        // Retrieve messages where the current user is either sender or receiver
+        
         $messages = Message::with(['sender', 'receiver'])
                             ->where('sender_id', $user->ID_user)
                             ->orWhere('receiver_id', $user->ID_user)
                             ->orderBy('created_at', 'desc')
                             ->get();
 
-        // Return messages to the view or do whatever you want
+       
         return view('msg.index', compact('messages'));
     }
 
@@ -99,20 +99,20 @@ class MessageController extends Controller
     {
         $user = session('user');
         if (!$user) {
-            return redirect()->route('login'); // or wherever you want to redirect
+            return redirect()->route('login');
         }
         return view('msg.sendfr');
     }
     
     public function sendMessagefr(Request $request)
     {
-        // Retrieve user from session
+        
         $user = session('user');
         if (!$user) {
-            return redirect()->route('login'); // or wherever you want to redirect
+            return redirect()->route('login'); 
         }
     
-        // Validate request
+        
         $request->validate([
             'receiver_id' => 'required|exists:users,ID_user',
             'subject' => 'required',
@@ -124,7 +124,7 @@ class MessageController extends Controller
 'message.required' => 'Veuillez entrer un message à envoyer.',
         ]);
        
-        // Create a new message
+        
         $message = new Message();
         $message->sender_id = $user->ID_user;
         $message->receiver_id = $request->receiver_id;
@@ -132,26 +132,26 @@ class MessageController extends Controller
         $message->message = $request->message;
         $message->save();
     
-        // Redirect back or return a response
+        
         return redirect()->back()->with('success', 'Message envoyé avec succès!');
     }
     
     public function getMessagesfr()
     {
-        // Retrieve user from session
+        
         $user = session('user');
         if (!$user) {
-            return redirect()->route('login'); // or wherever you want to redirect
+            return redirect()->route('login');
         }
     
-        // Retrieve messages where the current user is either sender or receiver
+        
         $messages = Message::with(['sender', 'receiver'])
                             ->where('sender_id', $user->ID_user)
                             ->orWhere('receiver_id', $user->ID_user)
                             ->orderBy('created_at', 'desc')
                             ->get();
     
-        // Return messages to the view or do whatever you want
+        
         return view('msg.indexfr', compact('messages'));
     }
     
@@ -175,7 +175,7 @@ class MessageController extends Controller
     public function getEmails(Request $request)
     {
         $search = $request->input('search');
-        $emails = User::where('Email', 'like', "{$search}%") // Changed to search emails that start with the entered characters
+        $emails = User::where('Email', 'like', "{$search}%") 
                       ->pluck('Email', 'ID_user');
     
         return response()->json($emails);

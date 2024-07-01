@@ -20,14 +20,13 @@ class AuthController extends Controller
         $email = $request->input('Email');
         $user = User::where('Email', $email)->first();
 
-        // if ($user && $user->Password === $password) {
+       
             if ($user && Hash::check($password, $user->Password)) {
             
-            // session(['user_id' => $user->id]);
+           
             session(['user' => $user]);
 
-            // return redirect()->intended('homepage');
-            // return redirect()->route('homepage')->with('user', $user);
+           
             return redirect()->route('homepage');
         }
 
